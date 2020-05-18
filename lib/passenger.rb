@@ -6,9 +6,10 @@ class Passenger
   )
   LAST_NAMES = %w(Smith Johnson Williams Brown Jones Miller Davis Garcia Rodriguez Wilson)
 
-  attr_accessor :name, :origin_floor, :destination_floor
+  attr_reader :id, :name, :origin_floor, :destination_floor
 
-  def initialize(origin_floor:, destination_floor:)
+  def initialize(id:,origin_floor:, destination_floor:)
+    @id = id
     @name = "#{FIRST_NAMES.sample} #{LAST_NAMES.sample}"
     @origin_floor = origin_floor
     @destination_floor = destination_floor

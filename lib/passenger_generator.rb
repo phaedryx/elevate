@@ -10,9 +10,11 @@ class PassengerGenerator
     @frequency = frequency
     @origin_floor = origin_floor
     @number_of_floors = number_of_floors
+    @ticks = 0
   end
 
   def tick
+    @ticks += 1
     # didn't randomly generate a passenger this time
     return nil if rand > @frequency
 
@@ -21,6 +23,10 @@ class PassengerGenerator
       destination_floor = rand(1..@number_of_floors) # ensure a different floow
     end
 
-    Passenger.new(origin_floor: @origin_floor, destination_floor: destination_floor)
+    Passenger.new(
+      id: "#{@origin_floor}-#{@ticks}",
+      origin_floor: @origin_floor, 
+      destination_floor: destination_floor,
+    )
   end
 end
