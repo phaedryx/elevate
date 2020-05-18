@@ -6,7 +6,7 @@ require_relative 'passenger'
 class PassengerGenerator
   attr_reader :frequency, :origin_floor, :number_of_floors
 
-  def initialize(frequency:, origin_floor:, number_of_floors:)
+  def initialize(frequency: 0.1, origin_floor:, number_of_floors:)
     @frequency = frequency
     @origin_floor = origin_floor
     @number_of_floors = number_of_floors
