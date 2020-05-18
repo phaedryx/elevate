@@ -8,7 +8,7 @@ class Passenger
 
   attr_reader :id, :name, :origin_floor, :destination_floor
 
-  def initialize(id:,origin_floor:, destination_floor:)
+  def initialize(id: '',origin_floor:, destination_floor:)
     @id = id
     @name = "#{FIRST_NAMES.sample} #{LAST_NAMES.sample}"
     @origin_floor = origin_floor
